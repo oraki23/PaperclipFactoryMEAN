@@ -1,0 +1,7 @@
+<div>
+  <h2>Your factories</h2>
+
+  <div *ngFor="let factory of factories">
+    <a routerLink="/">{{factory.name}} : {{factory.productionPerSecond}} paperclips per seconds</a>
+  </div>
+</div>
