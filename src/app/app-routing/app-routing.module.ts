@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FactoryListComponent } from '../factory-list/factory-list.component';
@@ -9,9 +8,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [ RouterModule.forRoot(routes)  ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

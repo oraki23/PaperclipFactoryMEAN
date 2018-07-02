@@ -3,5 +3,6 @@
 
   <div *ngFor="let factory of factories">
     <a routerLink="/">{{factory.name}} : {{factory.productionPerSecond}} paperclips per seconds</a>
+    <button (click)="sell(factory)">Sell</button>
   </div>
 </div>

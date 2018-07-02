@@ -1,5 +1,6 @@
 export class Factory{
     id: number;
     name: string;
-    productionPerSecond; number;
+    productionPerSecond: number;
+    value: number;
 }

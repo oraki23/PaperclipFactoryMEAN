@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Paperclip Factory';
   totalPaperclips = 200;
+  totalMoney = 200;
+
+  constructor(service: SharedService){
+    service.onMainEvent.subscribe(
+      (moneyToAdd) => {
+        this.totalMoney = this.totalMoney + moneyToAdd;
+      }
+    )
+  }
 }
