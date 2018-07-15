@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { EventEmitter } from '@angular/forms/src/facade/async';
+import { EventEmitter } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root'})
 export class SharedService {
 
   onMainEvent: EventEmitter<any> = new EventEmitter();

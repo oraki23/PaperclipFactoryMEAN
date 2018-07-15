@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Factory } from '../../model/factory'; 
+import { Factory } from 'model/factory'; 
 import { SharedService } from '../shared.service';
+import { FactoryService } from '../factory.service';
 
 @Component({
   selector: 'app-factory-list',
@@ -12,38 +13,21 @@ export class FactoryListComponent implements OnInit {
 
   private factories: Factory[];
 
-  constructor(private service: SharedService) { }
+  constructor(private service: SharedService,
+              private factoryService : FactoryService) { }
 
   ngOnInit() {
-    this.factories = this.mockFactories();
-  }
-
-  mockFactories(): Factory[]{
-    return [
-      {
-        id: 1,
-        name: 'The first and the best',
-        productionPerSecond: 100,
-        value: 1200
-      },
-      {
-        id: 2,
-        name: 'The second is always the better',
-        productionPerSecond: 150,
-        value: 1300
-      },
-      {
-        id: 3,
-        name: 'Third one is the wiser',
-        productionPerSecond: 200,
-        value: 1500
-      }
-    ];
+    this.getFactories();
   }
 
   sell(factory: Factory): void{
     this.factories = this.factories.filter(f => f !== factory);
     this.service.onMainEvent.emit(factory.value);
+  }
+
+  getFactories(): void{
+    this.factoryService.getFactories()
+      .subscribe(factories => this.factories = factories);
   }
 
 }

@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { FactoryListComponent } from './factory-list/factory-list.component';
-import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +16,9 @@ import { SharedService } from './shared.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent, [SharedService]]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
