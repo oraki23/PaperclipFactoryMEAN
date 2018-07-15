@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { FactoryListComponent } from './factory-list/factory-list.component';
+import { PaperclipProducerComponent } from './paperclip-producer/paperclip-producer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FactoryListComponent
+    FactoryListComponent,
+    PaperclipProducerComponent
   ],
   imports: [
     BrowserModule,
