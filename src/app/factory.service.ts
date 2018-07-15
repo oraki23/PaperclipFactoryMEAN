@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Factory } from '../model/factory';
+import { Factory } from 'model/factory';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class FactoryService {
       id: 1,
       name: 'The first and the best',
       productionPerSecond: 100,
-      value: 1200
+      value: 200
     },
     {
       id: 2,
